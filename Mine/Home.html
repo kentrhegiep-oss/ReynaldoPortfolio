@@ -1,0 +1,58 @@
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="menu">
+        <a href="Home.html" class="Plain">Work</a>
+        <a href="Project.html" class="Plain">Project</a>
+        <a href="Info.html" class="Plain">Info</a>
+    </div>
+
+    <div class="image-grid2">
+    <a href="png/2.png" class="grid-link"><img src="png/2.png" id="design1"></a>
+    <a href="png/4.png" class="grid-link"><img src="png/4.png" id="design2"></a>
+    <a href="png/5.png" class="grid-link"><img src="png/5.png" id="design3"></a>
+    <a href="png/6.png" class="grid-link"><img src="png/6.png" id="design4"></a>
+    <a href="png/LadiesShoes.jpg" class="grid-link"><img src="png/LadiesShoes.jpg"></a>
+    <a href="png/White & Pink.jpg" class="grid-link"><img src="png/White & Pink.jpg"></a>
+    <a href="png/White.jpg" class="grid-link"><img src="png/White.jpg"></a>
+    <a href="png/Pink.jpg" class="grid-link"><img src="png/Pink.jpg"></a>
+    <a href="png/whiteblue.jpg" class="grid-link"><img src="png/whiteblue.jpg"></a>
+    <a href="png/Delux.jpg" class="grid-link"><img src="png/Delux.jpg"></a>
+    <a href="png/BRo.jpg" class="grid-link"><img src="png/BRo.jpg"></a>
+    <a href="png/Black&blue.jpg" class="grid-link"><img src="png/Black&blue.jpg"></a>
+    </div>
+
+    <div id="imageViewer" class="image-viewer-modal" onclick="closeImageViewer()">
+        <span class="close-btn">&times;</span>
+        <img class="viewer-content" id="fullImage">
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const modal = document.getElementById("imageViewer");
+    const fullImg = document.getElementById("fullImage");
+
+   
+        document.querySelector(".image-grid2").addEventListener("click", (e) => {
+            const link = e.target.closest(".grid-link");
+                if (link) {
+                    e.preventDefault();
+                    fullImg.src = link.getAttribute("href");
+                    modal.style.display = "flex"; 
+                }
+        });
+    });
+
+
+    function closeImageViewer() {
+        document.getElementById("imageViewer").style.display = "none";
+    }
+
+    </script>
+
+</body>
+
+</html>
